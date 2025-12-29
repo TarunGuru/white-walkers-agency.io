@@ -56,9 +56,10 @@
         </div>
     </nav>
 
-    <main style="padding-top: var(--header-height);">
+    <main>
         <section class="section-padding">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;">
+            <div class="container"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 60px; align-items: start;">
                 <!-- Contact Info -->
                 <div>
                     <h1 class="shimmer-text" style="font-size: 3rem; margin-bottom: 24px;">Initiate Protocol</h1>
@@ -92,7 +93,7 @@
                 </div>
 
                 <!-- Contact Form -->
-                <div class="liquid" style="padding: 60px;">
+                <div class="liquid" style="padding: 50px; width: 100%; max-width: 600px; margin-inline: auto;">
                     <form id="contact-form">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                             <div class="form-group">

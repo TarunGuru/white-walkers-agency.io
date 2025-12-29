@@ -20,7 +20,8 @@
 
     --container-width: 1200px;
     --header-height: 80px;
-    --section-padding: clamp(60px, 10vh, 100px);
+    --section-padding: clamp(40px, 8vh, 80px);
+    /* Slightly reduced for tighter alignment */
 
     /* Transitions */
     --transition-liquid: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,6 +69,9 @@ a {
         0 0 15px var(--accent-glow);
     animation: liquid-morph 8s infinite alternate ease-in-out;
     transition: var(--transition-liquid);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .liquid-hover:hover {
@@ -77,6 +81,10 @@ a {
 }
 
 /* Layout Helpers */
+main {
+    padding-top: var(--header-height);
+}
+
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -85,6 +93,18 @@ a {
 
 .section-padding {
     padding: var(--section-padding) 0;
+}
+
+/* Standardized Hero Section */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px !important;
+    /* Fix for the hero-to-header gap */
 }
 
 /* Buttons */
@@ -145,6 +165,8 @@ nav.scrolled {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 0 24px;
+    /* Balanced padding */
 }
 
 .nav-logo {
