@@ -104,7 +104,13 @@ main {
     align-items: center;
     text-align: center;
     padding-top: 20px !important;
-    /* Fix for the hero-to-header gap */
+}
+
+.hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Buttons */
