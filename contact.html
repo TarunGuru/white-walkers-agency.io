@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | White Walkers Automation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glass);
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            font-family: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 10px var(--accent-glow);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="main-nav">
+        <div class="container nav-content">
+            <a href="index.html" class="nav-logo">WHITE<span>WALKERS</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <a href="contact.html" class="btn btn-outline" style="padding: 8px 20px;">Get Started</a>
+                <button id="mobile-toggle"
+                    style="display: none; background: transparent; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer;"><i
+                        class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: var(--header-height);">
+        <section class="section-padding">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;">
+                <!-- Contact Info -->
+                <div>
+                    <h1 class="shimmer-text" style="font-size: 3rem; margin-bottom: 24px;">Initiate Protocol</h1>
+                    <p style="color: var(--text-secondary); margin-bottom: 40px;">Ready to deploy White Walkers logic?
+                        Reach out to our technical leads for a consultation.</p>
+
+                    <div style="display: grid; gap: 30px;">
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <div class="liquid"
+                                style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; color: var(--accent-blue);">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text-secondary); font-size: 0.8rem; text-transform: uppercase;">
+                                    Email Us</h4>
+                                <p>ops@whitewalkers.io</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 20px;">
+                            <div class="liquid"
+                                style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; color: var(--accent-blue);">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 style="color: var(--text-secondary); font-size: 0.8rem; text-transform: uppercase;">
+                                    Base of Ops</h4>
+                                <p>Digital Core, Level 42<br>Cyber City, CC 001</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="liquid" style="padding: 60px;">
+                    <form id="contact-form">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Identity</label>
+                                <input type="text" class="form-control" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Digital
+                                    Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Industry</label>
+                            <input type="text" class="form-control" placeholder="e.g. Fintech, E-commerce">
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 8px; font-size: 0.9rem;">Mission Brief</label>
+                            <textarea class="form-control"
+                                placeholder="Tell us about the chaos we need to freeze..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Transmit Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="border: none;">
+                &copy; 2025 White Walkers Automation. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

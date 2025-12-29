@@ -1,0 +1,6 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Gemini Artificats (if any in child dirs)
+.gemini/
