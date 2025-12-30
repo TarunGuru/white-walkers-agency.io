@@ -13,10 +13,10 @@
     --border-glow: rgba(0, 184, 212, 0.4);
 
     /* Spacing & Radii */
-    --radius-lg: 24px;
+    --radius-lg: 20px;
     --radius-md: 12px;
-    --radius-liquid: 60% 40% 30% 70% / 60% 30% 70% 40%;
-    --radius-liquid-alt: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    --radius-sq: 8px;
+    --depth-3d: 6px;
 
     --container-width: 1200px;
     --header-height: 80px;
@@ -56,28 +56,36 @@ a {
     transition: var(--transition-smooth);
 }
 
-/* Liquidmorphism Utility */
+/* 3D Square Utility (keeping .liquid name for compatibility) */
 .liquid {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: var(--radius-liquid);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sq);
     box-shadow:
-        inset 0 0 20px rgba(255, 255, 255, 0.05),
-        0 15px 35px rgba(0, 0, 0, 0.5),
-        0 0 15px var(--accent-glow);
-    animation: liquid-morph 8s infinite alternate ease-in-out;
-    transition: var(--transition-liquid);
+        0 4px 0 rgba(0, 0, 0, 0.3),
+        /* 3D Bottom Depth */
+        0 8px 15px rgba(0, 0, 0, 0.4),
+        /* Shadow */
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    top: 0;
 }
 
 .liquid-hover:hover {
+    top: -4px;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 30px var(--accent-glow);
-    transform: scale(1.02);
+    box-shadow:
+        0 8px 0 rgba(0, 184, 212, 0.4),
+        /* Blue 3D Depth */
+        0 15px 30px rgba(0, 0, 0, 0.5),
+        0 0 15px var(--accent-glow);
+    transform: translateY(-2px);
 }
 
 /* Layout Helpers */
@@ -113,18 +121,19 @@ main {
     justify-content: center;
 }
 
-/* Buttons */
+/* 3D Buttons */
 .btn {
     display: inline-block;
     padding: 14px 36px;
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    border-radius: var(--radius-sq);
     font-weight: 600;
     cursor: pointer;
     transition: var(--transition-smooth);
     border: none;
     font-family: 'Outfit', sans-serif;
     position: relative;
-    overflow: hidden;
+    top: 0;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.4);
 }
 
 .btn-primary {
@@ -134,19 +143,23 @@ main {
 }
 
 .btn-primary:hover {
-    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
-    transform: scale(1.05);
+    top: -2px;
+    box-shadow: 0 6px 0 #0097a7, 0 10px 20px var(--accent-glow);
+    transform: translateY(-1px);
 }
 
 .btn-outline {
     background: transparent;
     border: 1px solid var(--accent-blue);
     color: var(--accent-blue);
+    box-shadow: 0 4px 0 rgba(0, 184, 212, 0.2);
 }
 
 .btn-outline:hover {
     background: var(--accent-blue);
     color: var(--bg-dark);
+    top: -2px;
+    box-shadow: 0 6px 0 rgba(0, 184, 212, 0.4);
 }
 
 /* Navigation */

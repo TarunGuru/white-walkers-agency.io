@@ -72,4 +72,21 @@ document.addEventListener('DOMContentLoaded', () => {
             icon.classList.toggle('fa-times');
         });
     }
+
+    // 3D Tilt Effect for Liquid Elements
+    document.addEventListener('mousemove', (e) => {
+        const cards = document.querySelectorAll('.liquid');
+        const x = (window.innerWidth / 2 - e.pageX) / 40;
+        const y = (window.innerHeight / 2 - e.pageY) / 40;
+
+        cards.forEach(card => {
+            if (card.matches(':hover')) {
+                card.style.transform = `perspective(1000px) rotateY(${x}deg) rotateX(${-y}deg) translateY(-8px)`;
+                card.style.transition = 'none'; // Instant follow on hover
+            } else {
+                card.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(0)';
+                card.style.transition = 'all 0.5s ease'; // Smooth return
+            }
+        });
+    });
 });
